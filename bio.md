@@ -1,0 +1,3 @@
+## About Me
+
+Omkar Sonar is studying Data Science at the Roux Institute and currently in his second-last semester. He did his undergraduate degree in Electronics Engineering and then worked for 2 years at Dassault Systemes as a Quality Engineer. He recently finished a Data Engineering co-op at Bangor Savings Bank where he built an ETL pipeline project transforming raw IT data into interactive dashboards creating metrics to boost efficiency.
