@@ -1,8 +1,8 @@
 ## Project Title 
-BSBAnomalies
+BSBSpendingPatterns
 
 ## Project Name 
-Customer Transaction Profiling for Fraud Anomaly Detection
+Customer – Transactions Activity & Spending Patterns
 
 ## Contributors 
 Omkar Sonar
