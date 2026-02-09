@@ -22,7 +22,7 @@ The modeling phase has two components. First, unsupervised clustering groups cus
 
 ### Risks/Limitations
 
-- **Three-month data window:** Limited temporal span may not capture seasonal patterns or long-term behavioral shifts. Mitigation: To document this limitation; frame predictions as short-term behavioral indicators.
+- **Three-month data window:** Limited temporal span may not capture seasonal patterns or long-term behavioral shifts. 
 
 ## Stakeholder Involvement
 
