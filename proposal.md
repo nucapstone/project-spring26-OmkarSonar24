@@ -12,9 +12,9 @@ Sean Reardon, Bangor Savings Bank — D&A Manager
 
 ### Story
 
-Bank transactions record the rhythm of daily life — though masked and concise, they reveal a customer's habits, routines, and financial behavior. Analyzing these patterns allows a bank to understand who their customers truly are, not just demographically, but behaviorally.
+Bank transactions record the rhythm of daily life and though masked and concise, they reveal a customer's habits, routines, and financial behavior. Analyzing these patterns allows a bank to understand who their customers truly are, not just demographically, but behaviorally.
 
-The initial goal of this project was fraud detection and anomaly analysis. However, early exploration revealed that the transaction data lacks fraud labels (chargebacks, disputes, investigation flags), making supervised fraud detection infeasible and unsupervised anomaly detection unverifiable. This led to a pivot toward customer segmentation and spending pattern prediction — a direction that provides measurable outcomes and concrete business value.
+The initial goal of this project was fraud detection and anomaly analysis. However, early exploration revealed that the transaction data lacks fraud labels (chargebacks, disputes, investigation flags), making supervised fraud detection infeasible and unsupervised anomaly detection unverifiable. This led to a pivot toward customer segmentation and spending pattern prediction, a direction that provides measurable outcomes and concrete business value.
 
 The project now aims to build a **customer intelligence system** that segments Bangor Savings Bank customers by their transaction behavior and predicts spending pattern changes. This enables the bank to identify customers who may be struggling financially before their situation worsens, determine which customers are good candidates for the bank's rewards program (Buoy Local), deliver personalized cashback incentives aligned with actual spending habits, and promote local businesses to relevant customer segments. This system can complement the bank's existing recommendation engine with data-driven behavioral insights.
 
