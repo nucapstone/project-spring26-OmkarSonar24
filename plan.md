@@ -13,7 +13,7 @@ The modeling phase has two components. First, unsupervised clustering groups cus
 | Milestone | Target Date | Deliverable |
 |-----------|-------------|-------------|
 | Data cleaning & loading | Complete | Cleaned CSV, DuckDB tables, documented data quality issues |
-| Exploratory data analysis | WIP | EDA notebooks for customers and transactions |
+| Exploratory data analysis | Complete | EDA notebooks for customers and transactions |
 | Feature engineering |  |   |
 | Customer segmentation |  |  |
 | Spending tier prediction |  |  |
