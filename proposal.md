@@ -1,0 +1,43 @@
+# Customer Intelligence System for Bangor Savings Bank
+
+## Team Members
+
+- Omkar Sonar
+
+## Project Description
+
+### Stakeholder
+
+Sean Reardon, Bangor Savings Bank — D&A Manager
+
+### Story
+
+Bank transactions record the rhythm of daily life — though masked and concise, they reveal a customer's habits, routines, and financial behavior. Analyzing these patterns allows a bank to understand who their customers truly are, not just demographically, but behaviorally.
+
+The initial goal of this project was fraud detection and anomaly analysis. However, early exploration revealed that the transaction data lacks fraud labels (chargebacks, disputes, investigation flags), making supervised fraud detection infeasible and unsupervised anomaly detection unverifiable. This led to a pivot toward customer segmentation and spending pattern prediction — a direction that provides measurable outcomes and concrete business value.
+
+The project now aims to build a **customer intelligence system** that segments Bangor Savings Bank customers by their transaction behavior and predicts spending pattern changes. This enables the bank to identify customers who may be struggling financially before their situation worsens, determine which customers are good candidates for the bank's rewards program (Buoy Local), deliver personalized cashback incentives aligned with actual spending habits, and promote local businesses to relevant customer segments. This system can complement the bank's existing recommendation engine with data-driven behavioral insights.
+
+### Data
+
+- **Customer Demographics:** 276,841 records containing relationship tenure (years/months), product holdings (deposit accounts, loans, credit cards, time deposits), active card indicators, account counts, business classification (NAICS codes), and customer flags (Bangor Wealth, Payroll, Merchant, TPS, Primary Banking).
+- **Transaction Records:** 8.2M+ debit card transactions spanning November 2025 – January 2026, including merchant name and category (MCC codes), ATM/merchant address and city, transaction amount, date/time, transaction type codes, and recurring transaction flags.
+- **Linkage:** Both datasets connect via masked CustomerIDs. 68,857 customers appear in both tables and form the core analysis population.
+- **PII Status:** CustomerIDs are masked (format: BSBxxxxxx). Transaction-level fields (ATM addresses, merchant names, timestamps) carry potential re-identification risk. Data is stored locally and not shared publicly.
+- **Access:** Data was provided directly by the stakeholder and is not publicly accessible.
+
+
+## Capstone Goal/Contribution
+
+The goal is to transform raw transaction and demographic data into a customer intelligence system that predicts spending behavior changes and creates actionable customer segments. Specifically, the project will engineer behavioral features from transaction data to predict spending tier movement (upgrade, stable, or downgrade), and cluster customers into interpretable segments that map to concrete bank actions — such as early intervention for financially struggling customers, rewards program targeting, personalized incentive design, and local business promotion. The contribution is a reproducible pipeline from raw bank data to business-ready customer profiles.
+
+## EDA
+
+### Transaction Volume and Timing Patterns
+
+Transaction activity peaks at noon and on Fridays, with 59% of transactions being pinless versus 41% pinned. Approximately 11.5% of transactions are flagged as recurring. These temporal and type distributions confirm sufficient behavioral variation across customers to support meaningful segmentation.
+
+### Customer Relationship Distribution
+
+Customer tenure ranges from new accounts to 40+ year relationships, with diverse product holding combinations across the population. The breadth of demographic profiles combined with distinct transaction behaviors supports the feasibility of identifying differentiated customer segments.
+
