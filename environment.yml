@@ -1,0 +1,17 @@
+name: capstone
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - git
+  - duckdb
+  - scikit-learn
+  - python=3.12
+  - ipykernel
+  - jupyter
+  - openpyxl
+  - plotly
+prefix: /home/omkar/miniforge3/envs/capstone
