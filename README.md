@@ -1,5 +1,5 @@
 ## Project Title 
-BSBSpendingPatterns
+FinSights
 
 ## Project Name 
 Customer – Transactions Activity & Spending Patterns
@@ -14,12 +14,15 @@ Data & Analytics Manager <br>
 Bangor Savings Bank
  
 ### Story 
-Bank transactions generally record everything and though they are masked or concise, a bank employee can easily decode a person's habits and most of their routine based on their bank transactions. Analysing the different kinds of transactions and deducing patterns in them can also help us in finding anomalies based on unusual activity. This could indicate account takeover or card fraud.
-The primary goal is to demonstrate how customer data and their transaction behaviour can help us in surfacing this suspicious activity. As more progress is made on this data, the scope is subject to change based on the initial findings.
+Bank transactions record the rhythm of daily life and though masked and concise, they reveal a customer's habits, routines and financial behavior. Analyzing these patterns allows a bank to understand who their customers truly are, not just demographically, but behaviorally.
+The initial goal of this project was fraud detection and anomaly analysis. However, early exploration revealed that making supervised fraud detection is not feasible. This led to a pivot toward customer segmentation and spending pattern prediction, a direction that provides measurable outcomes and concrete business value.
+The project now aims to build a **customer intelligence system** that segments Bangor Savings Bank customers by their
+transaction behavior and predicts spending pattern changes. This enables the bank **to identify customers who may be struggling financially** before their situation worsens, determine which customers are **good candidates for the bank's rewards program (Buoy Local)**, deliver **personalized cashback incentives** aligned with actual spending habits, and **promote local businesses** to relevant customer segments. This system can complement the bank's existing
+recommendation engine with data-driven behavioral insights.
  
 ### Data 
 #### Customer Demographics: 
-276,841 records containing customer profiles including relationship tenure, various product types in use, active status.
+276,838 records containing customer profiles including relationship tenure, various product types in use, active status.
 #### Customer Transactions: 
-Around 7 million debit card transaction records including merchant name and category, ATM address and location, transaction amount, date/time
+Around 8 million (8,234,091) debit card transaction records including merchant name and category, ATM address and location, transaction amount, date/time
 Both datasets contain a customerID (masked) which serves as a linking identifier.
