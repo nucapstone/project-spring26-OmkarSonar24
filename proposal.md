@@ -31,13 +31,5 @@ The project now aims to build a **customer intelligence system** that segments B
 
 The goal is to transform raw transaction and demographic data into a customer intelligence system that predicts spending behavior changes and creates actionable customer segments. Specifically, the project will engineer behavioral features from transaction data to predict spending tier movement (upgrade, stable, or downgrade), and cluster customers into interpretable segments that map to concrete bank actions — such as early intervention for financially struggling customers, rewards program targeting, personalized incentive design, and local business promotion. The contribution is a reproducible pipeline from raw bank data to business-ready customer profiles.
 
-## EDA
 
-### Transaction Volume and Timing Patterns
-
-Transaction activity peaks at noon and on Fridays, with 59% of transactions being pinless versus 41% pinned. Approximately 11.5% of transactions are flagged as recurring. These temporal and type distributions confirm sufficient behavioral variation across customers to support meaningful segmentation.
-
-### Customer Relationship Distribution
-
-Customer tenure ranges from new accounts to 40+ year relationships, with diverse product holding combinations across the population. The breadth of demographic profiles combined with distinct transaction behaviors supports the feasibility of identifying differentiated customer segments.
 
