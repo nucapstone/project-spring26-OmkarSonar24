@@ -23,6 +23,9 @@ recommendation engine with data-driven behavioral insights.
 ### Data 
 #### Customer Demographics: 
 276,838 records containing customer profiles including relationship tenure, various product types in use, active status.
+![Customer data](/figs/customers_dt.png)
+
 #### Customer Transactions: 
 Around 8 million (8,234,091) debit card transaction records including merchant name and category, ATM address and location, transaction amount, date/time
 Both datasets contain a customerID (masked) which serves as a linking identifier.
+![Transactions data](/figs/transactions_dt.png)
