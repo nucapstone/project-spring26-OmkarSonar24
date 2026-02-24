@@ -10,11 +10,11 @@ The modeling phase has two components. First, unsupervised clustering groups cus
 
 ### Milestones
 
-| Milestone | Target Date | Deliverable |
+| Milestone | Status | Deliverable |
 |-----------|-------------|-------------|
 | Data cleaning & loading | Complete | Cleaned CSV, DuckDB tables, documented data quality issues |
 | Exploratory data analysis | Complete | EDA notebooks for customers and transactions |
-| Feature engineering |  |   |
+| Feature engineering | Currently ~40 features |   |
 | Customer segmentation |  |  |
 | Spending tier prediction |  |  |
 | Stakeholder review |  |  |
@@ -28,5 +28,5 @@ The modeling phase has two components. First, unsupervised clustering groups cus
 
 - Stakeholder provided the data and has reviewed the project direction pivot from fraud detection to customer intelligence.
 - Stakeholder meeting notes informed four business use cases: early intervention of struggling cutomers, rewards targeting, personalized incentives, and local business promotion.
-- Follow-up meeting to clarify open data questions.
+- Follow-up meetings to clarify open data questions and track project status.
 - Stakeholder will review final results and segment profiles before presentation.
