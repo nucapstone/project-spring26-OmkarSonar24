@@ -1,0 +1,74 @@
+mcc_code,mcc_label,category
+5411,Grocery Stores and Supermarkets,Grocery
+5499,Miscellaneous Food Stores - Convenience Stores and Specialty Markets,Grocery
+5462,Bakeries,Grocery
+5812,Eating Places and Restaurants,Dining
+5814,Fast Food Restaurants,Dining
+5813,"Drinking Places (Alcoholic Beverages) - Bars, Taverns, Nightclubs, Cocktail Lounges, and Discotheques",Dining
+5921,"Package Stores - Beer, Wine, and Liquor",Dining
+5541,Service Stations (With or without Ancillary Services),Gas
+5542,Automated Fuel Dispensers,Gas
+5818,Digital Goods - Large Digital Goods Merchant,Digital/Subscriptions
+5815,"Digital Goods Media - Books, Movies, Digital artwork/images, Music",Digital/Subscriptions
+5816,Digital Goods - Games,Digital/Subscriptions
+5817,Digital Goods - Applications (Excludes Games),Digital/Subscriptions
+5968,Direct Marketing - Continuity/Subscription Merchant,Digital/Subscriptions
+4816,Computer Network/Information Services,Electronics/Computers
+5734,Computer Software Stores,Electronics/Computers
+5732,Electronics Stores,Electronics/Computers
+4899,"Cable, Satellite and Other Pay Television/Radio/Streaming Services",Telecom/Cable
+4814,"Telecommunication Services, including Local and Long-Distance Calls, Credit Card Calls, Calls Through Use of Magnetic-",Telecom/Cable
+5310,Discount Stores,Retail
+5311,Department Stores,Retail
+5331,Variety Stores,Retail
+5399,Miscellaneous General Merchandise,Retail
+5999,Miscellaneous and Specialty Retail Shops,Retail
+5300,Wholesale Clubs,Retail
+5931,Used Merchandise and Secondhand Stores,Retail
+5947,"Gift, Card, Novelty and Souvenir Shops",Retail
+5942,Book Stores,Retail
+5912,Drug Stores and Pharmacies,Healthcare
+8099,Medical Services and Health Practitioners (Not Elsewhere Classified),Healthcare
+8062,Hospitals,Healthcare
+0742,Veterinary Services,Pets
+5995,"Pet Shops, Pet Foods and Supplies Stores",Pets
+5200,Home Supply Warehouse Stores,Home/Hardware
+5251,Hardware Stores,Home/Hardware
+5211,Lumber and Building Materials Stores,Home/Hardware
+7394,"Equipment, Tool, Furniture, and Appliance Rental and Leasing",Home/Hardware
+5533,Automotive Parts and Accessories Stores,Automotive
+5599,"Miscellaneous Automotive, Aircraft, and Farm Equipment Dealers (Not Elsewhere Classified)",Automotive
+7538,Automotive Service Shops (Non-Dealer),Automotive
+7542,Car Washes,Automotive
+5691,Men's and Women's Clothing Stores,Clothing
+5651,Family Clothing Stores,Clothing
+5699,Miscellaneous Apparel and Accessory Shops,Clothing
+7801,Government Licensed On-Line Casinos (On-Line Gambling) (US Region only),Entertainment/Leisure
+7994,Video Game Arcades/Establishments,Entertainment/Leisure
+7832,Motion Picture Theaters,Entertainment/Leisure
+7997,"Membership Clubs (Sports, Recreation, Athletic), Country Clubs, and Private Golf Courses",Entertainment/Leisure
+7800,Government-Owned Lotteries (US Region only),Entertainment/Leisure
+7999,Recreation Services (Not Elsewhere Classified),Entertainment/Leisure
+5945,"Hobby, Toy, and Game Shops",Entertainment/Leisure
+5941,Sporting Goods Stores,Entertainment/Leisure
+5735,Record Stores,Entertainment/Leisure
+5970,Artists' Supply and Craft Shops,Entertainment/Leisure
+4829,Money Transfer,Financial Services
+6012,"Financial Institutions - Merchandise, Services, and Debt Repayment",Financial Services
+6300,"Insurance Sales, Underwriting, and Premiums",Financial Services
+6051,"Non-Financial Institutions - Foreign Currency, Liquid and Cryptocurrency Assets (for example: Cryptocurrency), Money",Financial Services
+7299,Miscellaneous Personal Services (Not Elsewhere Classified),Personal Care
+7230,Beauty and Barber Shops,Personal Care
+7211,Laundries - Family and Commercial,Personal Care
+5977,Cosmetic Stores,Personal Care
+4121,Taxicabs and Limousines,Transportation
+4111,"Local and Suburban Commuter Passenger Transportation, Including Ferries",Transportation
+4784,Tolls and Bridge Fees,Transportation
+7523,"Parking Lots, Parking Meters and Garages",Transportation
+4900,"Utilities - Electric, Gas, Water, and Sanitary",Utilities
+9399,Government Services (Not Elsewhere Classified),Government/Community
+9402,Postal Services - Government Only,Government/Community
+8398,Charitable Social Service Organizations,Government/Community
+7399,Business Services (Not Elsewhere Classified),Government/Community
+5993,Cigar Stores and Stands,Other
+5967,Adult Content and Services,Other

@@ -1,2 +1,17 @@
-data/
+# Python
+__pycache__/
+*.pyc
 
+# dbt
+capstone_dbt/target/
+capstone_dbt/dbt_packages/
+
+# Data
+data/
+!data/processed/mcc_categories.xlsx
+
+# Notebooks
+notebooks/experimentingwithdata.ipynb
+
+# Logs
+logs/
