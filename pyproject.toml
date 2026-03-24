@@ -1,7 +1,7 @@
 [project]
 name = "project-spring26-omkarsonar24"
 version = "0.1.0"
-description = "Add your description here"
+description = "Customer spending intelligence system for Bangor Savings Bank (DS5500 Capstone)"
 requires-python = ">=3.12"
 dependencies = [
     "dbt-core>=1.11.7",
