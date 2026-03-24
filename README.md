@@ -246,7 +246,5 @@ Key table: `gold.mrt_customer_features` contains 68,582 customers with 57 column
 |---|---|
 | Custom CSV parser | Raw transaction file has embedded commas in ATM addresses. Standard parsers fail. MCC code used as positional anchor. |
 | Pivot from fraud to segmentation | No fraud labels in dataset. Proactively surfaced to stakeholder as analytical integrity. |
-| K-Means k=4 over GMM (as of now) | Silhouette 0.110 vs 0.059. Business-interpretable segments. |
+| K-Means k=4 over GMM (as of now) | Silhouette 0.110. Business-interpretable segments. |
 | 57 features for clustering | Three-way comparison (57 vs 41 vs 33) showed full feature set outperforms pruned sets at all business-relevant k values. |
-| 33 features for supervised models | Correlation pruning improves interpretability for classification without losing clustering quality. |
-| January seasonality acknowledged | Post-holiday spending dip inflates DOWNGRADE class. Documented as known limitation of the 65-day window. |
