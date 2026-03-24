@@ -1,0 +1,22 @@
+# sources.yml
+# -----------
+# Documents the silver layer tables that dbt models read from.
+# These tables are created by src/load_db.py (not managed by dbt).
+#
+# Note: Current models reference these tables directly as silver.table_name
+# rather than using {{ source() }}. This file serves as documentation
+# of the upstream dependency.
+
+version: 2
+
+sources:
+  - name: silver
+    schema: silver
+    description: "Cleaned and typed tables built by src/load_db.py"
+    tables:
+      - name: transactions
+        description: "8.1M debit card transactions (zero-dollar removed, types cast)"
+      - name: customers
+        description: "276K customer demographics (duplicate removed, booleans normalized)"
+      - name: mcc_mapping
+        description: "478 MCC codes with labels from Visa standards manual"

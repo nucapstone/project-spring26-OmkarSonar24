@@ -1,17 +1,25 @@
-# Python
+# ── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
+*.pyo
+.venv/
 
-# dbt
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Data (raw + processed + database are all generated/private) ───────────────
+data/raw/
+data/processed/
+data/*.duckdb
+data/*.duckdb.wal
+data/mcc_mapping.csv
+
+# ── dbt generated files ──────────────────────────────────────────────────────
 capstone_dbt/target/
 capstone_dbt/dbt_packages/
+capstone_dbt/logs/
 
-# Data
-data/
-!data/processed/mcc_categories.xlsx
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
 
-# Notebooks
-notebooks/experimentingwithdata.ipynb
 
-# Logs
-logs/

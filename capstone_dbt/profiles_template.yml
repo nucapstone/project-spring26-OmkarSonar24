@@ -1,0 +1,14 @@
+# profiles_template.yml
+# ---------------------
+# Copy this file to ~/.dbt/profiles.yml on your machine and update the path below.
+# The real profiles.yml is NOT committed to the repo.
+#
+# To find your path, run from the project root:
+#   echo $(pwd)/data/capstone.duckdb
+
+capstone_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /ABSOLUTE/PATH/TO/project-spring26-OmkarSonar24/data/capstone.duckdb
