@@ -8,7 +8,7 @@ __pycache__/
 .DS_Store
 
 # ── Data (raw + processed + database are all generated/private) ───────────────
-data/
+data/*
 !data/sample/
 
 # ── dbt generated files ──────────────────────────────────────────────────────
