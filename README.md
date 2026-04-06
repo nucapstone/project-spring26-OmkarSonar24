@@ -74,21 +74,19 @@ project-spring26-OmkarSonar24/
 │   ├── 01_customers_eda.ipynb        #   Customer demographics EDA
 │   ├── 02_transactions_eda.ipynb     #   Transaction-level EDA
 │   ├── 03_stakeholder_analysis.ipynb #   Business questions for stakeholder
-│   ├── 04_clustering.ipynb           #   K-Means segmentation (k=4)
-│   └── 05_features_selection.ipynb   #   Feature pruning experiments
+│   └── 04_clustering.ipynb           #   K-Means segmentation (k=4)
 │
-├── data/                             # Data directory (gitignored)
-│   ├── raw/                          #   Original CSV + XLSX from BSB
-│   └── processed/                    #   Generated clean CSVs
+├── data/                             # Data directory (gitignored except sample/)
+│   ├── raw/                          #   Original CSV + XLSX from BSB (not tracked)
+│   ├── processed/                    #   Generated clean CSVs (not tracked)
+│   └── sample/                       #   Anonymized 500-customer sample (tracked)
+│       ├── customers_sample.csv
+│       ├── transactions_sample.csv
+│       └── mcc_mapping_labeled.csv
 │
 ├── figs/                             # All visualizations
 │   ├── eda/                          #   EDA plots (customers, transactions)
-│   ├── clustering/                   #   Cluster selection and profiles
-│   └── feature_selection/            #   Correlation heatmap
-│
-├── docs/                             # Project documentation
-│   ├── data_issues.md                #   Data quality issues and decisions
-│   └── data_summary.md              #   Project phases and observations
+│   └── clustering/                   #   Cluster selection and profiles
 │
 ├── misc/                             # Reference materials
 │   └── visa-merchant-data-standards-manual.pdf
@@ -140,9 +138,17 @@ Both approaches create a `.venv` virtual environment and install all packages fr
 source .venv/bin/activate
 ```
 
-### Step 3: Place raw data files
+### Step 3: Choose your data source
 
-Since the data directory is gitignored, create it and add the original BSB files:
+#### Option A: Using sample data (no BSB files needed)
+
+A pre-built sample dataset (500 customers, ~28K transactions) is included in `data/sample/`. The pipeline automatically detects the absence of full data files and uses the sample data instead.
+
+Skip directly to Step 5.
+
+#### Option B: Using full BSB data
+
+Place the raw data files from Bangor Savings Bank:
 
 ```bash
 mkdir -p data/raw data/processed
@@ -156,7 +162,7 @@ data/raw/
 └── OmkarCustomerDemographics.xlsx
 ```
 
-### Step 4: Run the data pipeline
+### Step 4: Run the data pipeline (Option B only)
 
 Run these four scripts in order from the project root:
 
@@ -183,11 +189,20 @@ Expected outputs:
 | mcc_mapping_labeled.csv | data/processed/ | 478 MCC codes |
 | capstone.duckdb | data/ | Bronze + silver schemas |
 
-### Step 5: Configure and run dbt (gold layer)
+### Step 5: Build the database
 
-dbt (data build tool) transforms the silver layer into analysis-ready feature tables. It was installed in Step 1 as part of the project dependencies.
+```bash
+# Build DuckDB database (bronze + silver layers)
+python src/load_db.py
+```
 
-**5a.** Create the dbt profiles file. A template is included in the repo:
+Expected output: `data/capstone.duckdb` with bronze and silver schemas.
+
+#### Configure and run dbt (gold layer)
+
+dbt transforms the silver layer into analysis-ready feature tables. It was installed in Step 1 as part of the project dependencies.
+
+**5a.** Create the dbt profiles file:
 
 ```bash
 mkdir -p ~/.dbt
@@ -203,7 +218,7 @@ echo $(pwd)/data/capstone.duckdb
 
 Paste that full path as the `path` value in `profiles.yml`.
 
-**5c.** All dbt commands must be run from inside the `capstone_dbt/` directory:
+**5c.** Run dbt (all commands from inside `capstone_dbt/`):
 
 ```bash
 cd capstone_dbt
