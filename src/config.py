@@ -19,5 +19,17 @@ CUSTOMERS_CSV     = PROCESSED_DIR / "customers_clean.csv"
 MCC_INPUT_CSV     = BASE_DIR / "data" / "mcc_mapping.csv"
 MCC_LABELED_CSV   = PROCESSED_DIR / "mcc_mapping_labeled.csv"
 
+# Sample data (for reproducibility purposes)
+SAMPLE_DIR = BASE_DIR / "data" / "sample"
+SAMPLE_CUSTOMERS = SAMPLE_DIR / "customers_sample.csv"
+SAMPLE_TRANSACTIONS = SAMPLE_DIR / "transactions_sample.csv"
+
+USE_SAMPLE = not PROCESSED_DIR.exists() or not TRANSACTIONS_CSV.exists()
+
+if USE_SAMPLE:
+    TRANSACTIONS_CSV = SAMPLE_TRANSACTIONS
+    CUSTOMERS_CSV    = SAMPLE_CUSTOMERS
+    MCC_LABELED_CSV  = SAMPLE_DIR / "mcc_mapping_labeled.csv"
+
 # Database
 DUCKDB_PATH           = BASE_DIR  / "data" / "capstone.duckdb"

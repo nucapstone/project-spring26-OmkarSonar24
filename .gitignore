@@ -8,11 +8,8 @@ __pycache__/
 .DS_Store
 
 # ── Data (raw + processed + database are all generated/private) ───────────────
-data/raw/
-data/processed/
-data/*.duckdb
-data/*.duckdb.wal
-data/mcc_mapping.csv
+data/
+!data/sample/
 
 # ── dbt generated files ──────────────────────────────────────────────────────
 capstone_dbt/target/
