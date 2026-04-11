@@ -2,7 +2,7 @@
 
 **DS5500 Capstone Project** | Northeastern University | Spring 2026
 
-**Author:** Omkar Sonar
+**Built by:** Omkar Sonar
 
 **Professor:** Philip Bogden, PhD
 
@@ -18,14 +18,14 @@ Bank transactions record the rhythm of daily life. Though masked and concise, th
 
 The initial goal of this project was fraud detection. However, early exploration revealed that the dataset contained no fraud labels, making supervised fraud detection infeasible. This led to a pivot toward **customer segmentation and spending intelligence**, a direction that provides measurable outcomes and concrete business value.
 
-The project builds a **customer intelligence system** that segments Bangor Savings Bank customers by debit card transaction behavior and predicts spending tier movement (UPGRADE / STABLE / DOWNGRADE). This enables the bank to:
-
-1. Identify customers who may be **struggling financially** before their situation worsens
-2. Determine which customers are good candidates for the **Buoy Local rewards program**
-3. Deliver **personalized cashback incentives** aligned with actual spending habits
-4. **Promote local businesses** to relevant customer segments
-
-This is a **proof of concept**.
+FinSights is a **customer intelligence system** that segments Bangor Savings Bank retail debit card customers by behavioral patterns, enabling the bank to:
+ 
+1. Target the right customers for the **Buoy Local rewards program**
+2. Deliver **personalized cashback incentives** aligned with actual spending habits
+3. Identify customers who may be **disengaging** before they churn
+4. **Promote local businesses** to the most relevant customer segments
+ 
+This is a **proof of concept** built on a 65-day observation window (November 2025 - January 2026).
 
 ---
 
@@ -38,43 +38,103 @@ This is a **proof of concept**.
 
 Both datasets share a masked `CustomerID` as the linking identifier. The observation window covers approximately 65 days (November 2025 to January 2026).
 
-**Note:** Raw data files are private (provided by Bangor Savings Bank) and are not included in this repository. To reproduce the pipeline, place the original files in `data/raw/` as described in the setup instructions below.
+FinSights is a **customer intelligence system** that segments Bangor Savings Bank retail debit card customers by behavioral patterns, enabling the bank to:
+ 
+1. Target the right customers for the **Buoy Local rewards program**
+2. Deliver **personalized cashback incentives** aligned with actual spending habits
+3. Identify customers who may be **disengaging** before they churn
+4. **Promote local businesses** to the most relevant customer segments
+ 
+This is a **proof of concept** built on a 65-day observation window (November 2025 – January 2026).
+ 
+---
+ 
+ ## Methodology
+ 
+### Data Pipeline (Medallion Architecture)
+ 
+| Layer | Schema | Built By | Description |
+|---|---|---|---|
+| Bronze | `bronze.*` | `src/load_db.py` | Raw data loaded as-is (all VARCHAR) |
+| Silver | `silver.*` | `src/load_db.py` | Cleaned, typed, deduplicated |
+| Gold | `gold.*` | `dbt run` + notebook | Feature-engineered, analysis-ready |
 
-![Customer data](/figs/customers_dt.png)
-![Transactions data](/figs/transactions_dt.png)
 
+### Segmentation
+ 
+- **55 behavioral features** engineered per customer (spending totals, category shares, temporal patterns, geographic behavior, product holdings)
+- **K-Means clustering (k=4)** selected through multi-method validation:
+  - HDBSCAN sweep confirmed no naturally discrete groups exist (95%+ in one mega-cluster)
+  - GMM soft assignments validated hard boundaries (98.8% of customers assigned with >90% confidence)
+  - Distinctiveness count justified k=4: the only value where every cluster has ≥9 features with >0.3 SD from the population mean
+- **Four segments identified:**
+  - **Active Everyday Spenders** (51.5%) — BSB's core: 91 txns, 42 merchants, $4,249 avg spend
+  - **Lending-Engaged Loyal Customers** (17.0%) — deepest relationships: 17.5yr tenure, 99% have loans
+  - **Low-Frequency Big Spenders** (17.0%) — bill payers: 11 txns, $161 avg transaction size
+  - **Low-Activity Digital Users** (14.4%) — churn risk: 6 txns, $126 total, mostly subscriptions
+ 
+### Interactive Dashboard
+ 
+An Observable Framework dashboard provides segment exploration and business recommendations across four pages: Overview, Trends, Customer Profiles, and Recommendations.
+ 
 ---
 
 ## Project Structure
-
+ 
 ```
 project-spring26-OmkarSonar24/
 │
 ├── src/                              # Pipeline scripts (run in order)
 │   ├── config.py                     #   All file paths and constants
-│   ├── ingest_transactions.py        #   Step 1: Raw CSV -> transactions_clean.csv
-│   ├── ingest_customers.py           #   Step 2: Raw Excel -> customers_clean.csv
-│   ├── mcc_labeler.py                #   Step 3: Visa PDF -> mcc_mapping_labeled.csv
-│   └── load_db.py                    #   Step 4: CSVs -> DuckDB bronze + silver layers
+│   ├── ingest_transactions.py        #   Step 1: Raw CSV → transactions_clean.csv
+│   ├── ingest_customers.py           #   Step 2: Raw Excel → customers_clean.csv
+│   ├── mcc_labeler.py                #   Step 3: Visa PDF → mcc_mapping_labeled.csv
+│   └── load_db.py                    #   Step 4: CSVs → DuckDB bronze + silver layers
 │
-├── capstone_dbt/                     # dbt project (gold layer, Step 5)
+├── capstone_dbt/                     # dbt project (gold layer)
 │   ├── models/
 │   │   ├── marts/
 │   │   │   ├── mrt_mcc_categories.sql
 │   │   │   └── mrt_customer_features.sql
-│   │   └── sources.yml               #   Documents upstream silver tables
+│   │   └── sources.yml
 │   ├── seeds/
-│   │   └── mcc_category_rules.csv    #   73 top MCC category assignments
+│   │   └── mcc_category_rules.csv
 │   ├── macros/
 │   │   └── generate_schema_name.sql
-│   ├── profiles_template.yml         #   Template for ~/.dbt/profiles.yml
+│   ├── profiles_template.yml
 │   └── dbt_project.yml
 │
+├── finsights-dashboard/              # Observable Framework dashboard
+│   ├── src/
+│   │   ├── index.md                  #   Overview page
+│   │   ├── eda.md                    #   Trends
+│   │   ├── segments.md               #   Customer Profiles (interactive)
+│   │   ├── insights.md               #   Recommendations
+│   │   └── data/                     #   Python data loaders
+│   │       ├── customer_clusters.csv.py
+│   │       ├── demographics.csv.py
+│   │       ├── segment_profiles.csv.py
+│   │       ├── segment_geo.csv.py
+│   │       ├── segment_categories.csv.py
+│   │       ├── segment_maine_merchants.csv.py
+│   │       ├── segment_maine_cities.csv.py
+│   │       ├── segment_oos_merchants.csv.py
+│   │       ├── segment_oos_cities.csv.py
+│   │       ├── segment_recurring.csv.py
+│   │       ├── hourly_pattern.csv.py
+│   │       ├── daily_pattern.csv.py
+│   │       ├── monthly_trend.csv.py
+│   │       ├── category_spend.csv.py
+│   │       ├── top_merchants.csv.py
+│   │       └── geo_spending.csv.py
+│   ├── observablehq.config.js
+│   └── package.json
+│
 ├── notebooks/                        # Analysis notebooks (run in order)
-│   ├── 01_customers_eda.ipynb        #   Customer demographics EDA
-│   ├── 02_transactions_eda.ipynb     #   Transaction-level EDA
-│   ├── 03_stakeholder_analysis.ipynb #   Business questions for stakeholder
-│   └── 04_clustering.ipynb           #   K-Means segmentation (k=4)
+│   ├── 01_customers_eda.ipynb
+│   ├── 02_transactions_eda.ipynb
+│   ├── 03_stakeholder_analysis.ipynb
+│   └── 04_clustering.ipynb
 │
 ├── data/                             # Data directory (gitignored except sample/)
 │   ├── raw/                          #   Original CSV + XLSX from BSB (not tracked)
@@ -84,16 +144,16 @@ project-spring26-OmkarSonar24/
 │       ├── transactions_sample.csv
 │       └── mcc_mapping_labeled.csv
 │
-├── figs/                             # All visualizations
-│   ├── eda/                          #   EDA plots (customers, transactions)
-│   └── clustering/                   #   Cluster selection and profiles
+├── figs/                             # Visualizations
+│   ├── eda/
+│   └── clustering/
 │
 ├── misc/                             # Reference materials
 │   └── visa-merchant-data-standards-manual.pdf
 │
 ├── presentations/                    # Slide decks
-│   ├── class/                        #   Check-in presentations
-│   └── stakeholder/                  #   BSB meeting materials
+│   ├── class/
+│   └── stakeholder/
 │
 ├── pyproject.toml                    # Python dependencies (uv)
 ├── uv.lock                           # Locked dependency versions
@@ -107,8 +167,8 @@ project-spring26-OmkarSonar24/
 ### Prerequisites
 
 - Python 3.12+
-- [uv](https://docs.astral.sh/uv/) package manager (recommended), or pip
-- Raw data files from Bangor Savings Bank
+- [uv](https://docs.astral.sh/uv/) package manager
+- Node.js 18+ (for the Observable dashboard)
 
 ### Step 1: Clone and install dependencies
 
@@ -118,148 +178,82 @@ project-spring26-OmkarSonar24/
 git clone <repo-url>
 cd project-spring26-OmkarSonar24
 uv sync
-```
-
-**Using pip (alternative):**
-
-```bash
-git clone <repo-url>
-cd project-spring26-OmkarSonar24
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-Both approaches create a `.venv` virtual environment and install all packages from `pyproject.toml`, including dbt-core and dbt-duckdb.
-
-### Step 2: Activate the environment
-
-```bash
 source .venv/bin/activate
 ```
 
-### Step 3: Choose your data source
-
-#### Option A: Using sample data (no BSB files needed)
-
-A pre-built sample dataset (500 customers, ~28K transactions) is included in `data/sample/`. The pipeline automatically detects the absence of full data files and uses the sample data instead.
-
-Skip directly to Step 5.
-
-#### Option B: Using full BSB data
-
-Place the raw data files from Bangor Savings Bank:
-
-```bash
-mkdir -p data/raw data/processed
-```
-
-Copy the files into `data/raw/`:
-
+### Step 2: Choose your data source
+ 
+**Option A — Sample data (no BSB files needed):**
+ 
+A pre-built sample dataset (500 customers, ~28K transactions) is included in `data/sample/`. The pipeline automatically detects the absence of full data files and falls back to sample data. Skip to Step 4.
+ 
+**Option B — Full BSB data:**
+ 
+Place the raw files from Bangor Savings Bank into `data/raw/`:
+ 
 ```
 data/raw/
 ├── OmkarCapstone_Final_ArchivePassportData_20260123.csv
 └── OmkarCustomerDemographics.xlsx
 ```
-
-### Step 4: Run the data pipeline (Option B only)
-
-Run these four scripts in order from the project root:
-
+ 
+### Step 3: Run the ingestion pipeline (Option B only)
+ 
 ```bash
-# Parse transactions
 python src/ingest_transactions.py
-
-# Convert customer demographics from Excel to CSV
 python src/ingest_customers.py
-
-# Extract and label MCC codes from Visa PDF
 python src/mcc_labeler.py
-
-# Build DuckDB database (bronze + silver layers)
-python src/load_db.py
 ```
-
-Expected outputs:
-
-| File | Location | Rows |
-|---|---|---|
-| transactions_clean.csv | data/processed/ | 8,234,091 |
-| customers_clean.csv | data/processed/ | 276,838 |
-| mcc_mapping_labeled.csv | data/processed/ | 478 MCC codes |
-| capstone.duckdb | data/ | Bronze + silver schemas |
-
-### Step 5: Build the database
-
+ 
+### Step 4: Build the database
+ 
 ```bash
-# Build DuckDB database (bronze + silver layers)
 python src/load_db.py
 ```
-
-Expected output: `data/capstone.duckdb` with bronze and silver schemas.
-
-#### Configure and run dbt (gold layer)
-
-dbt transforms the silver layer into analysis-ready feature tables. It was installed in Step 1 as part of the project dependencies.
-
-**5a.** Create the dbt profiles file:
-
+ 
+This creates `data/capstone.duckdb` with bronze and silver schemas.
+ 
+### Step 5: Run dbt (gold layer)
+ 
 ```bash
 mkdir -p ~/.dbt
 cp capstone_dbt/profiles_template.yml ~/.dbt/profiles.yml
 ```
-
-**5b.** Edit `~/.dbt/profiles.yml` and replace the placeholder path with your actual project location:
-
+ 
+Edit `~/.dbt/profiles.yml` and replace the placeholder path with your actual DuckDB path:
+ 
 ```bash
-# To find your path, run from the project root:
 echo $(pwd)/data/capstone.duckdb
 ```
-
-Paste that full path as the `path` value in `profiles.yml`.
-
-**5c.** Run dbt (all commands from inside `capstone_dbt/`):
-
+ 
+Then build the gold layer:
+ 
 ```bash
 cd capstone_dbt
-dbt debug          # verify connection (look for "Connection test: OK")
-dbt seed           # load mcc_category_rules (73 rows into gold schema)
-dbt run            # build mrt_mcc_categories + mrt_customer_features
+dbt debug    # verify connection
+dbt seed     # load MCC category rules
+dbt run      # build mrt_mcc_categories + mrt_customer_features
 cd ..
 ```
-
-If `dbt debug` fails, the most common cause is an incorrect path in `profiles.yml`.
-
-### Step 6: Register Jupyter kernel and run notebooks
-
+ 
+### Step 6: Run notebooks
+ 
 ```bash
 python -m ipykernel install --user --name=capstone --display-name "Python (capstone)"
 jupyter notebook
 ```
+ 
+Run notebooks 01 through 04 in order, selecting the **Python (capstone)** kernel. Notebook 04 (clustering) saves cluster assignments to `gold.mrt_customer_clusters` in DuckDB.
+ 
+### Step 7: Launch the dashboard
+ 
+```bash
+cd finsights-dashboard
+npm install
+npm run dev
+```
+ 
+The dashboard runs at `http://localhost:3000` and connects to `../data/capstone.duckdb` via Python data loaders.
 
-Run notebooks in order (01 through 05), selecting the **Python (capstone)** kernel in each.
 
----
 
-## Database Architecture
-
-The project uses a **medallion architecture** in DuckDB:
-
-| Layer | Schema | Built By | Description |
-|---|---|---|---|
-| Bronze | `bronze.*` | `src/load_db.py` | Raw data loaded as-is (all VARCHAR) |
-| Silver | `silver.*` | `src/load_db.py` | Cleaned, typed, deduplicated |
-| Gold | `gold.*` | `dbt run` | Feature-engineered, analysis-ready |
-
-Key table: `gold.mrt_customer_features` contains 68,582 customers with 57 columns.
-
----
-
-## Key Technical Decisions
-
-| Decision | Rationale |
-|---|---|
-| Custom CSV parser | Raw transaction file has embedded commas in ATM addresses. Standard parsers fail. MCC code used as positional anchor. |
-| Pivot from fraud to segmentation | No fraud labels in dataset. Proactively surfaced to stakeholder as analytical integrity. |
-| K-Means k=4 over GMM (as of now) | Silhouette 0.110. Business-interpretable segments. |
-| 57 features for clustering | Three-way comparison (57 vs 41 vs 33) showed full feature set outperforms pruned sets at all business-relevant k values. |
