@@ -33,19 +33,10 @@ This is a **proof of concept** built on a 65-day observation window (November 20
 
 | Dataset | Records | Description |
 |---|---|---|
-| Customer Demographics | 276,838 | Profiles including relationship tenure, product holdings, active status |
-| Debit Card Transactions | 8,234,091 | Merchant name/category, ATM location, amount, date/time |
+| Customer Demographics | 276,836 | Profiles including relationship tenure, product holdings, active status |
+| Debit Card Transactions | 8,137,375 | Merchant name/category, ATM location, amount, date/time |
 
 Both datasets share a masked `CustomerID` as the linking identifier. The observation window covers approximately 65 days (November 2025 to January 2026).
-
-FinSights is a **customer intelligence system** that segments Bangor Savings Bank retail debit card customers by behavioral patterns, enabling the bank to:
- 
-1. Target the right customers for the **Buoy Local rewards program**
-2. Deliver **personalized cashback incentives** aligned with actual spending habits
-3. Identify customers who may be **disengaging** before they churn
-4. **Promote local businesses** to the most relevant customer segments
- 
-This is a **proof of concept** built on a 65-day observation window (November 2025 – January 2026).
  
 ---
  
@@ -255,5 +246,29 @@ npm run dev
  
 The dashboard runs at `http://localhost:3000` and connects to `../data/capstone.duckdb` via Python data loaders.
 
+---
 
+## Key Technical Decisions
 
+| Decision | Rationale |
+|---|---|
+| Custom CSV parser | Raw transaction file has embedded commas in ATM addresses. Standard parsers fail. MCC code used as positional anchor. |
+| Pivot from fraud to segmentation | No fraud labels in dataset. Proactively surfaced to stakeholder as analytical integrity. |
+| K-Means k=4 | Distinctiveness count shows k=4 is the only value where every cluster has ≥9 features at >0.3 SD from population mean. |
+| Full 55-feature set | Three-way comparison (55 vs 41 vs 33 features) showed full set outperforms pruned versions at all business-relevant k values. |
+| Observable Framework | Reactive dashboard with Python data loaders connecting directly to DuckDB - no intermediate API layer needed. |
+
+---
+
+## Known Limitations
+
+- **Short observation window** - 65 days (Nov–Jan) includes holiday seasonality and post-holiday pullback. Patterns may not generalize to a full year.
+- **Customer coverage** - analysis covers 58,677 customers with both transaction and demographic records. ~59,000 additional transacting customers lacked demographic data and were excluded.
+- **MCC categorization** - some codes are ambiguous (e.g., Bookstores spans Amazon to physical retailers). Requires ongoing stakeholder validation.
+- **Soft cluster boundaries** - customer behavior exists on a continuum. HDBSCAN confirmed no naturally discrete groups; segments are useful business groupings, not hard categories.
+
+## Future Work
+
+- **Predictive modeling** - classify customers as UPGRADE / STABLE / DOWNGRADE using temporal train/test splits to identify at-risk customers before they churn.
+- **Extended observation window** - a 12-month dataset removes seasonal bias and reveals true behavioral trends.
+- **Cross-sell scoring** - 30,000+ Active Everyday Spenders have zero loans. Predictive models could identify which customers are most likely to adopt lending products.
