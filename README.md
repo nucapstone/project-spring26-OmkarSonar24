@@ -59,10 +59,10 @@ Both datasets share a masked `CustomerID` as the linking identifier. The observa
   - GMM soft assignments validated hard boundaries (98.8% of customers assigned with >90% confidence)
   - Distinctiveness count justified k=4: the only value where every cluster has ≥9 features with >0.3 SD from the population mean
 - **Four segments identified:**
-  - **Active Everyday Spenders** (51.5%) — BSB's core: 91 txns, 42 merchants, $4,249 avg spend
-  - **Lending-Engaged Loyal Customers** (17.0%) — deepest relationships: 17.5yr tenure, 99% have loans
-  - **Low-Frequency Big Spenders** (17.0%) — bill payers: 11 txns, $161 avg transaction size
-  - **Low-Activity Digital Users** (14.4%) — churn risk: 6 txns, $126 total, mostly subscriptions
+  - **Active Everyday Spenders** (51.5%) - BSB's core: 91 txns, 42 merchants, $4,249 avg spend
+  - **Lending-Engaged Loyal Customers** (17.0%) - deepest relationships: 17.5yr tenure, 99% have loans
+  - **Low-Frequency Big Spenders** (17.0%) - bill payers: 11 txns, $161 avg transaction size
+  - **Low-Activity Digital Users** (14.4%) - churn risk: 6 txns, $126 total, mostly subscriptions
  
 ### Interactive Dashboard
  
