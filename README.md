@@ -50,7 +50,9 @@ Both datasets share a masked `CustomerID` as the linking identifier. The observa
 | Silver | `silver.*` | `src/load_db.py` | Cleaned, typed, deduplicated |
 | Gold | `gold.*` | `dbt run` + notebook | Feature-engineered, analysis-ready |
 
-![Pipeline Architecture](/figs/architecture.png)
+<p align="center">
+  <img src="figs/architecture.png" alt="Pipeline Architecture" width="350">
+</p>
 
 ### Segmentation
  
