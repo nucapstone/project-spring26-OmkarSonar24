@@ -252,7 +252,7 @@ npm install
 npm run dev
 ```
  
-The dashboard runs at `http://localhost:3000` and connects to `../data/capstone.duckdb` via Python data loaders.
+The dashboard runs locally and connects to `../data/capstone.duckdb` via Python data loaders.
 
 ---
 
