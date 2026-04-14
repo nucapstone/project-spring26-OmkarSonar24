@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>FinSights - Customer Intelligence | FinSights</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,alt,wide.8a524e59.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt,wide.8a524e59.css">
+<link rel="modulepreload" href="./_observablehq/client.929f7874.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.277aeab8.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/66d82917.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/a96a6bbb.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/87adea64.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.1.0/d4ec0aa1.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.3/42820bfa.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.929f7874.js";
+import {registerFile} from "./_observablehq/stdlib.277aeab8.js";
+
+registerFile("./data/customer_clusters.csv", {"name":"./data/customer_clusters.csv","mimeType":"text/csv","path":"./_file/data/customer_clusters.22a15a1d.csv","lastModified":1775053107562,"size":16706813});
+
+define({id: "eb87b086", inputs: ["FileAttachment"], outputs: ["customers"], body: (FileAttachment) => {
+const customers = FileAttachment("./data/customer_clusters.csv").csv({typed: true});
+return {customers};
+}});
+
+define({id: "3ebdf8de", outputs: ["COLORS"], body: () => {
+const COLORS = {
+  "Active Everyday Spenders": "#1e3a5f",
+  "Lending-Engaged Loyal Customers": "#2563eb",
+  "Low-Frequency Big Spenders": "#0ea5e9",
+  "Low-Activity Digital Users": "#93c5fd"
+};
+return {COLORS};
+}});
+
+define({id: "475d083b", mode: "inline", inputs: ["customers","display"], body: async (customers,display) => {
+display(await(
+customers.length.toLocaleString("en-US")
+))
+}});
+
+define({id: "38af6ca2", inputs: ["d3","customers"], outputs: ["segmentData"], body: (d3,customers) => {
+const segmentData = d3.rollups(
+  customers,
+  v => v.length,
+  d => d.cluster_name
+).map(([name, count]) => ({name, count, pct: (count / customers.length * 100).toFixed(1)}));
+return {segmentData};
+}});
+
+define({id: "6a9c79fc", inputs: ["Plot","COLORS"], outputs: ["segmentBar"], body: (Plot,COLORS) => {
+function segmentBar(data, {width} = {}) {
+  return Plot.plot({
+    width,
+    height: 300,
+    marginLeft: 260,
+    marginRight: 20,
+    x: {label: null, grid: false, axis: null},
+    y: {label: null},
+    color: {
+      domain: Object.keys(COLORS),
+      range: Object.values(COLORS)
+    },
+    marks: [
+      Plot.axisY({fontSize: 13, tickSize: 0}),
+      Plot.barX(data, {
+        x: "count", y: "name", fill: "name",
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      }),
+      Plot.text(data, {
+        x: "count", y: "name",
+        text: d => `${d.pct}%`,
+        dx: -5, textAnchor: "end", fill: "white", fontSize: 12, fontWeight: 600
+      }),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {segmentBar};
+}});
+
+define({id: "4961ac4b", mode: "inline", inputs: ["resize","segmentBar","segmentData","display"], body: async (resize,segmentBar,segmentData,display) => {
+display(await(
+resize((width) => segmentBar(segmentData, {width}))
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">FinSights</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./eda">Trends</a></li>
+    <li class="observablehq-link"><a href="./segments">Customer Profiles</a></li>
+    <li class="observablehq-link"><a href="./insights">Recommendations</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="fin-sights-customer-intelligence" tabindex="-1"><a class="observablehq-header-anchor" href="#fin-sights-customer-intelligence">FinSights - Customer Intelligence</a></h1>
+<div class="tip" label="About">
+  The original data includes 276,836 customers of <b>Bangor Savings Bank</b> and 8,137,375 transactions. This project focuses on customers who made at least one debit card transaction over a <b>65 day window between November 20, 2025 - January 24, 2026</b>. This resulted in a dataset of <b>58,677 customers</b> after removing non-individual customers and certain outliers having a combined <b>3,695,806 transactions</b>. 
+</div>
+<div class="observablehq observablehq--block"><!--:eb87b086:--></div>
+<div class="observablehq observablehq--block"><!--:3ebdf8de:--></div>
+<div class="grid grid-cols-3">
+  <div class="card">
+    <h2>Total Customers</h2>
+    <span class="big"><observablehq-loading></observablehq-loading><!--:475d083b:--></span>
+  </div>
+  <div class="card">
+    <h2>Behavioral Features</h2>
+    <span class="big">55</span>
+  </div>
+  <div class="card">
+    <h2>Customer Segments</h2>
+    <span class="big">4</span>
+  </div>
+</div>
+<h2 id="customer-segments" tabindex="-1"><a class="observablehq-header-anchor" href="#customer-segments">Customer Segments</a></h2>
+<div class="observablehq observablehq--block"><!--:38af6ca2:--></div>
+<div class="observablehq observablehq--block"><!--:6a9c79fc:--></div>
+<div class="grid grid-cols-1">
+  <div class="card">
+    <observablehq-loading></observablehq-loading><!--:4961ac4b:-->
+  </div>
+</div></main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./eda"><span>Trends</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-14T13:34:10">Apr 14, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>

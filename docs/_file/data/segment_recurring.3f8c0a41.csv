@@ -1,0 +1,9 @@
+cluster_name,txn_type,txn_count,total_spend,avg_amount
+Active Everyday Spenders,Non-Recurring,2448398,116008723.19,47.38
+Active Everyday Spenders,Recurring,293758,12506451.06,42.57
+Lending-Engaged Loyal Customers,Non-Recurring,705380,34670304.12,49.15
+Lending-Engaged Loyal Customers,Recurring,83036,3761289.29,45.3
+Low-Activity Digital Users,Non-Recurring,39517,826692.98,20.92
+Low-Activity Digital Users,Recurring,11396,239429.77,21.01
+Low-Frequency Big Spenders,Non-Recurring,94455,15606454.04,165.23
+Low-Frequency Big Spenders,Recurring,19866,2074442.09,104.42

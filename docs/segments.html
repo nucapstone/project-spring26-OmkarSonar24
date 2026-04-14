@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Segment Profiles | FinSights</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,alt,wide.8a524e59.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt,wide.8a524e59.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="modulepreload" href="./_observablehq/client.929f7874.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.277aeab8.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/66d82917.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.31cd1366.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/a96a6bbb.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/87adea64.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.1.0/d4ec0aa1.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.3/42820bfa.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.929f7874.js";
+import {registerFile} from "./_observablehq/stdlib.277aeab8.js";
+
+registerFile("./data/customer_clusters.csv", {"name":"./data/customer_clusters.csv","mimeType":"text/csv","path":"./_file/data/customer_clusters.22a15a1d.csv","lastModified":1775053107562,"size":16706813});
+registerFile("./data/segment_categories.csv", {"name":"./data/segment_categories.csv","mimeType":"text/csv","path":"./_file/data/segment_categories.153c59a8.csv","lastModified":1775622625329,"size":408});
+registerFile("./data/segment_geo.csv", {"name":"./data/segment_geo.csv","mimeType":"text/csv","path":"./_file/data/segment_geo.1e6eea48.csv","lastModified":1776021853206,"size":589});
+registerFile("./data/segment_maine_cities.csv", {"name":"./data/segment_maine_cities.csv","mimeType":"text/csv","path":"./_file/data/segment_maine_cities.f48a1c87.csv","lastModified":1776022087861,"size":2326});
+registerFile("./data/segment_maine_merchants.csv", {"name":"./data/segment_maine_merchants.csv","mimeType":"text/csv","path":"./_file/data/segment_maine_merchants.2eaa752d.csv","lastModified":1776022087894,"size":2556});
+registerFile("./data/segment_oos_cities.csv", {"name":"./data/segment_oos_cities.csv","mimeType":"text/csv","path":"./_file/data/segment_oos_cities.a89b35b3.csv","lastModified":1776022087845,"size":2362});
+registerFile("./data/segment_oos_merchants.csv", {"name":"./data/segment_oos_merchants.csv","mimeType":"text/csv","path":"./_file/data/segment_oos_merchants.b0080072.csv","lastModified":1776022087961,"size":2498});
+registerFile("./data/segment_profiles.csv", {"name":"./data/segment_profiles.csv","mimeType":"text/csv","path":"./_file/data/segment_profiles.bd962cf5.csv","lastModified":1775065866361,"size":12997});
+registerFile("./data/segment_recurring.csv", {"name":"./data/segment_recurring.csv","mimeType":"text/csv","path":"./_file/data/segment_recurring.3f8c0a41.csv","lastModified":1776021876184,"size":565});
+
+define({id: "a2b36265", inputs: ["FileAttachment"], outputs: ["profiles","customers","geo","maineMerchants","maineCities","recurring","categories","oosMerchants","oosCities"], body: (FileAttachment) => {
+const profiles = FileAttachment("./data/segment_profiles.csv").csv({typed: true});
+const customers = FileAttachment("./data/customer_clusters.csv").csv({typed: true});
+const geo = FileAttachment("./data/segment_geo.csv").csv({typed: true});
+const maineMerchants = FileAttachment("./data/segment_maine_merchants.csv").csv({typed: true});
+const maineCities = FileAttachment("./data/segment_maine_cities.csv").csv({typed: true});
+const recurring = FileAttachment("./data/segment_recurring.csv").csv({typed: true});
+const categories = FileAttachment("./data/segment_categories.csv").csv({typed: true});
+const oosMerchants = FileAttachment("./data/segment_oos_merchants.csv").csv({typed: true});
+const oosCities = FileAttachment("./data/segment_oos_cities.csv").csv({typed: true});
+return {profiles,customers,geo,maineMerchants,maineCities,recurring,categories,oosMerchants,oosCities};
+}});
+
+define({id: "3ebdf8de", outputs: ["COLORS"], body: () => {
+const COLORS = {
+  "Active Everyday Spenders": "#1e3a5f",
+  "Lending-Engaged Loyal Customers": "#2563eb",
+  "Low-Frequency Big Spenders": "#0ea5e9",
+  "Low-Activity Digital Users": "#93c5fd"
+};
+return {COLORS};
+}});
+
+define({id: "892f537a", inputs: ["Inputs","COLORS","Generators"], outputs: ["segmentPicker","selectedSegment"], body: (Inputs,COLORS,Generators) => {
+const segmentPicker = Inputs.select(
+  Object.keys(COLORS),
+  {label: "Select Segment"}
+);
+const selectedSegment = Generators.input(segmentPicker);
+return {segmentPicker,selectedSegment};
+}});
+
+define({id: "3cc4fb8b", mode: "inline", inputs: ["segmentPicker","display"], body: async (segmentPicker,display) => {
+display(await(
+segmentPicker
+))
+}});
+
+define({id: "308d33ed", inputs: ["customers","selectedSegment","geo","d3","COLORS"], outputs: ["seg","segCount","segPct","segGeo","inState","inStatePct","segColor"], body: (customers,selectedSegment,geo,d3,COLORS) => {
+const seg = customers.filter(d => d.cluster_name === selectedSegment);
+const segCount = seg.length;
+const segPct = (segCount / customers.length * 100).toFixed(1);
+const segGeo = geo.filter(d => d.cluster_name === selectedSegment);
+const inState = segGeo.find(d => d.location === "In-State (Maine)");
+const inStatePct = inState ? (inState.txn_count / d3.sum(segGeo, d => d.txn_count) * 100).toFixed(0) : "—";
+const segColor = COLORS[selectedSegment];
+return {seg,segCount,segPct,segGeo,inState,inStatePct,segColor};
+}});
+
+define({id: "cdf561ad", mode: "inline", inputs: ["segCount","display"], body: async (segCount,display) => {
+display(await(
+segCount.toLocaleString("en-US")
+))
+}});
+
+define({id: "53329072", mode: "inline", inputs: ["segPct","display"], body: async (segPct,display) => {
+display(await(
+segPct
+))
+}});
+
+define({id: "d98f568b", mode: "inline", inputs: ["d3","seg","display"], body: async (d3,seg,display) => {
+display(await(
+d3.mean(seg, d => d.total_spend).toLocaleString("en-US", {maximumFractionDigits: 0})
+))
+}});
+
+define({id: "0413b952", mode: "inline", inputs: ["d3","seg","display"], body: async (d3,seg,display) => {
+display(await(
+d3.mean(seg, d => d.transaction_count).toFixed(0)
+))
+}});
+
+define({id: "f02537d1", mode: "inline", inputs: ["d3","seg","display"], body: async (d3,seg,display) => {
+display(await(
+(d3.mean(seg, d => d.total_spend) / d3.mean(seg, d => d.transaction_count)).toFixed(0)
+))
+}});
+
+define({id: "9c131e9c", mode: "inline", inputs: ["inStatePct","display"], body: async (inStatePct,display) => {
+display(await(
+inStatePct
+))
+}});
+
+define({id: "88cd4e7c", inputs: ["Plot"], outputs: ["profileChart"], body: (Plot) => {
+function profileChart(data, segment, {width} = {}) {
+  const filtered = data
+    .filter(d => d.cluster_name === segment)
+    .sort((a, b) => Math.abs(b.z_score) - Math.abs(a.z_score))
+    .slice(0, 15);
+
+  return Plot.plot({
+    width,
+    height: 400,
+    marginLeft: 220,
+    x: {label: "Std. Deviations from Average", grid: true, tickSize: 0},
+    y: {label: null, tickSize: 0},
+    color: {domain: [-2, 0, 2], range: ["#dc2626", "#e5e7eb", "#1e3a5f"], type: "linear"},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(filtered, {
+        x: "z_score", y: "feature", fill: "z_score",
+        sort: {y: "x"},
+        tip: {format: {fill: false}}
+      }),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {profileChart};
+}});
+
+define({id: "ccfe2062", inputs: ["html","Plot","segColor"], outputs: ["categoryChart"], body: (html,Plot,segColor) => {
+function categoryChart(data, segment, {width} = {}) {
+  const row = data.find(d => d.cluster_name === segment);
+  if (!row) return html`<p>No data</p>`;
+
+  const cats = ["grocery", "dining", "gas", "digital", "retail", "healthcare",
+                "entertainment", "financial", "telecom", "utilities", "other"];
+  const catData = cats.map(c => ({category: c, share: row[c]}))
+    .sort((a, b) => b.share - a.share);
+
+  return Plot.plot({
+    width,
+    height: 400,
+    marginLeft: 120,
+    x: {label: "% of Spend", grid: false, axis: null},
+    y: {label: null, tickSize: 0},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(catData, {
+        x: "share", y: "category", fill: segColor,
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      }),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {categoryChart};
+}});
+
+define({id: "a119336a", mode: "inline", inputs: ["resize","profileChart","profiles","selectedSegment","display"], body: async (resize,profileChart,profiles,selectedSegment,display) => {
+display(await(
+resize((width) => profileChart(profiles, selectedSegment, {width}))
+))
+}});
+
+define({id: "f041b73f", mode: "inline", inputs: ["resize","categoryChart","categories","selectedSegment","display"], body: async (resize,categoryChart,categories,selectedSegment,display) => {
+display(await(
+resize((width) => categoryChart(categories, selectedSegment, {width}))
+))
+}});
+
+define({id: "feb82230", inputs: ["d3","Plot"], outputs: ["geoSplitChart"], body: (d3,Plot) => {
+function geoSplitChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+  const total = d3.sum(filtered, d => d.txn_count);
+  const plotData = filtered.map(d => ({...d, pct: d.txn_count / total * 100}));
+
+  return Plot.plot({
+    width,
+    height: 200,
+    marginLeft: 160,
+    marginRight: 20,
+    x: {label: "% of Transactions", grid: false, tickSize: 0},
+    y: {label: null, tickSize: 0},
+    color: {domain: ["In-State (Maine)", "Out-of-State"], range: ["#1e3a5f", "#93c5fd"]},
+    marks: [
+      Plot.barX(plotData, {
+        x: "pct", y: "location", fill: "location",
+        tip: {format: {fill: false}}
+      }),
+      Plot.text(plotData, {
+        x: "pct", y: "location", text: d => `${d.pct.toFixed(1)}%`,
+        dx: -5, textAnchor: "end", fill: "white", fontSize: 12, fontWeight: 600
+      }),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {geoSplitChart};
+}});
+
+define({id: "ce4ba602", inputs: ["d3","Plot"], outputs: ["recurringChart"], body: (d3,Plot) => {
+function recurringChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+  const total = d3.sum(filtered, d => d.txn_count);
+  const plotData = filtered.map(d => ({...d, pct: d.txn_count / total * 100}));
+
+  return Plot.plot({
+    width,
+    height: 200,
+    marginLeft: 160,
+    marginRight: 20,
+    x: {label: "% of Transactions", grid: false, tickSize: 0},
+    y: {label: null, tickSize: 0},
+    color: {domain: ["Non-Recurring", "Recurring"], range: ["#1e3a5f", "#0ea5e9"]},
+    marks: [
+      Plot.barX(plotData, {
+        x: "pct", y: "txn_type", fill: "txn_type",
+        tip: {format: {fill: false}}
+      }),
+      Plot.text(plotData, {
+        x: "pct", y: "txn_type", text: d => `${d.pct.toFixed(1)}%`,
+        dx: -5, textAnchor: "end", fill: "white", fontSize: 12, fontWeight: 600
+      }),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {recurringChart};
+}});
+
+define({id: "00c38384", mode: "inline", inputs: ["resize","geoSplitChart","geo","selectedSegment","display"], body: async (resize,geoSplitChart,geo,selectedSegment,display) => {
+display(await(
+resize((width) => geoSplitChart(geo, selectedSegment, {width}))
+))
+}});
+
+define({id: "c220be0f", mode: "inline", inputs: ["resize","recurringChart","recurring","selectedSegment","display"], body: async (resize,recurringChart,recurring,selectedSegment,display) => {
+display(await(
+resize((width) => recurringChart(recurring, selectedSegment, {width}))
+))
+}});
+
+define({id: "ab6c0d4d", inputs: ["Plot","segColor"], outputs: ["merchantChart"], body: (Plot,segColor) => {
+function merchantChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+
+  return Plot.plot({
+    width,
+    height: 350,
+    marginLeft: 200,
+    x: {label: null, grid: false, axis: null},
+    y: {label: null, tickSize: 0},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(filtered, {
+        x: "total_spend", y: "Merchant_Name", fill: segColor,
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      })
+    ]
+  });
+}
+return {merchantChart};
+}});
+
+define({id: "365ab1cb", inputs: ["Plot","segColor"], outputs: ["cityChart"], body: (Plot,segColor) => {
+function cityChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+
+  return Plot.plot({
+    width,
+    height: 350,
+    marginLeft: 160,
+    x: {label: null, grid: false, axis: null},
+    y: {label: null, tickSize: 0},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(filtered, {
+        x: "total_spend", y: "city", fill: segColor,
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      })
+    ]
+  });
+}
+return {cityChart};
+}});
+
+define({id: "ef956b5a", mode: "inline", inputs: ["resize","merchantChart","maineMerchants","selectedSegment","display"], body: async (resize,merchantChart,maineMerchants,selectedSegment,display) => {
+display(await(
+resize((width) => merchantChart(maineMerchants, selectedSegment, {width}))
+))
+}});
+
+define({id: "991a5440", mode: "inline", inputs: ["resize","cityChart","maineCities","selectedSegment","display"], body: async (resize,cityChart,maineCities,selectedSegment,display) => {
+display(await(
+resize((width) => cityChart(maineCities, selectedSegment, {width}))
+))
+}});
+
+define({id: "102d40aa", inputs: ["Plot","segColor"], outputs: ["oosMerchantChart"], body: (Plot,segColor) => {
+function oosMerchantChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+
+  return Plot.plot({
+    width,
+    height: 350,
+    marginLeft: 200,
+    x: {label: null, grid: false, axis: null},
+    y: {label: null, tickSize: 0},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(filtered, {
+        x: "total_spend", y: "Merchant_Name", fill: segColor, fillOpacity: 0.6,
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      })
+    ]
+  });
+}
+return {oosMerchantChart};
+}});
+
+define({id: "9dd746c6", inputs: ["Plot","segColor"], outputs: ["oosCityChart"], body: (Plot,segColor) => {
+function oosCityChart(data, segment, {width} = {}) {
+  const filtered = data.filter(d => d.cluster_name === segment);
+
+  return Plot.plot({
+    width,
+    height: 350,
+    marginLeft: 160,
+    x: {label: null, grid: false, axis: null},
+    y: {label: null, tickSize: 0},
+    marks: [
+      Plot.axisY({fontSize: 12, tickSize: 0}),
+      Plot.barX(filtered, {
+        x: "total_spend", y: "city", fill: segColor, fillOpacity: 0.6,
+        sort: {y: "-x"},
+        tip: {format: {fill: false}}
+      })
+    ]
+  });
+}
+return {oosCityChart};
+}});
+
+define({id: "d742f9b4", mode: "inline", inputs: ["resize","oosMerchantChart","oosMerchants","selectedSegment","display"], body: async (resize,oosMerchantChart,oosMerchants,selectedSegment,display) => {
+display(await(
+resize((width) => oosMerchantChart(oosMerchants, selectedSegment, {width}))
+))
+}});
+
+define({id: "3eef6d6c", mode: "inline", inputs: ["resize","oosCityChart","oosCities","selectedSegment","display"], body: async (resize,oosCityChart,oosCities,selectedSegment,display) => {
+display(await(
+resize((width) => oosCityChart(oosCities, selectedSegment, {width}))
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">FinSights</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./eda">Trends</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./segments">Customer Profiles</a></li>
+    <li class="observablehq-link"><a href="./insights">Recommendations</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="segment-profiles" tabindex="-1"><a class="observablehq-header-anchor" href="#segment-profiles">Segment Profiles</a></h1>
+<p>K-Means clustering on 55 behavioral features identified four distinct customer groups.</p>
+<div class="observablehq observablehq--block"><!--:a2b36265:--></div>
+<div class="observablehq observablehq--block"><!--:3ebdf8de:--></div>
+<div class="observablehq observablehq--block"><!--:892f537a:--></div>
+<p><observablehq-loading></observablehq-loading><!--:3cc4fb8b:--></p>
+<div class="observablehq observablehq--block"><!--:308d33ed:--></div>
+<div class="grid grid-cols-4">
+  <div class="card">
+    <h2>Customers</h2>
+    <span class="big"><observablehq-loading></observablehq-loading><!--:cdf561ad:--></span>
+    <span style="color: #6b7280; font-size: 0.85rem;"><observablehq-loading></observablehq-loading><!--:53329072:-->% of total</span>
+  </div>
+  <div class="card">
+    <h2>Avg Spend</h2>
+    <span class="big">$<observablehq-loading></observablehq-loading><!--:d98f568b:--></span>
+  </div>
+  <div class="card">
+    <h2>Avg Transactions</h2>
+    <span class="big"><observablehq-loading></observablehq-loading><!--:0413b952:--></span>
+    <span style="color: #6b7280; font-size: 0.85rem;">$<observablehq-loading></observablehq-loading><!--:f02537d1:--> per txn</span>
+  </div>
+  <div class="card">
+    <h2>Maine Transactions</h2>
+    <span class="big"><observablehq-loading></observablehq-loading><!--:9c131e9c:-->%</span>
+  </div>
+</div>
+<h2 id="spending-profile" tabindex="-1"><a class="observablehq-header-anchor" href="#spending-profile">Spending Profile</a></h2>
+<div class="observablehq observablehq--block"><!--:88cd4e7c:--></div>
+<div class="observablehq observablehq--block"><!--:ccfe2062:--></div>
+<div class="grid grid-cols-2">
+  <div class="card">
+    <h2>Top Distinctive Features (Z-Score)</h2>
+    <observablehq-loading></observablehq-loading><!--:a119336a:-->
+  </div>
+  <div class="card">
+    <h2>Category Breakdown</h2>
+    <observablehq-loading></observablehq-loading><!--:f041b73f:-->
+  </div>
+</div>
+<h2 id="transaction-patterns" tabindex="-1"><a class="observablehq-header-anchor" href="#transaction-patterns">Transaction Patterns</a></h2>
+<div class="observablehq observablehq--block"><!--:feb82230:--></div>
+<div class="observablehq observablehq--block"><!--:ce4ba602:--></div>
+<div class="grid grid-cols-2">
+  <div class="card">
+    <h2>In-State vs Out-of-State</h2>
+    <observablehq-loading></observablehq-loading><!--:00c38384:-->
+  </div>
+  <div class="card">
+    <h2>Recurring vs One-Time</h2>
+    <observablehq-loading></observablehq-loading><!--:c220be0f:-->
+  </div>
+</div>
+<h2 id="where-they-spend-in-maine" tabindex="-1"><a class="observablehq-header-anchor" href="#where-they-spend-in-maine">Where They Spend in Maine</a></h2>
+<div class="observablehq observablehq--block"><!--:ab6c0d4d:--></div>
+<div class="observablehq observablehq--block"><!--:365ab1cb:--></div>
+<div class="grid grid-cols-2">
+  <div class="card">
+    <h2>Top Maine Merchants</h2>
+    <observablehq-loading></observablehq-loading><!--:ef956b5a:-->
+  </div>
+  <div class="card">
+    <h2>Top Maine Cities</h2>
+    <observablehq-loading></observablehq-loading><!--:991a5440:-->
+  </div>
+</div>
+<h2 id="where-they-spend-outside-maine" tabindex="-1"><a class="observablehq-header-anchor" href="#where-they-spend-outside-maine">Where They Spend Outside Maine</a></h2>
+<div class="observablehq observablehq--block"><!--:102d40aa:--></div>
+<div class="observablehq observablehq--block"><!--:9dd746c6:--></div>
+<div class="grid grid-cols-2">
+  <div class="card">
+    <h2>Top Out-of-State Merchants</h2>
+    <observablehq-loading></observablehq-loading><!--:d742f9b4:-->
+  </div>
+  <div class="card">
+    <h2>Top Out-of-State Cities</h2>
+    <observablehq-loading></observablehq-loading><!--:3eef6d6c:-->
+  </div>
+</div>
+<div class="note" style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;">
+  Some out-of-state entries display phone numbers instead of city names - these represent online merchants which report a toll-free number rather than a physical location (eg : 8,558,124,430 = Venmo, 855-707-7328 = Spectrum, 402-935-7733 = PayPal).
+</div></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./eda"><span>Trends</span></a><a rel="next" href="./insights"><span>Recommendations</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-14T13:34:10">Apr 14, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>

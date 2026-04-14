@@ -1,0 +1,41 @@
+cluster_name,city,txn_count,total_spend,unique_customers
+Active Everyday Spenders,BANGOR,191522,9110561.85,11735
+Active Everyday Spenders,PORTLAND,80628,3684439.43,8658
+Active Everyday Spenders,AUGUSTA,56566,3660428.83,10332
+Active Everyday Spenders,BREWER,57510,2754532.27,6528
+Active Everyday Spenders,WATERVILLE,52492,2512403.87,5273
+Active Everyday Spenders,BELFAST,50466,2051977.27,3117
+Active Everyday Spenders,SCARBOROUGH,29334,1859764.46,4988
+Active Everyday Spenders,SKOWHEGAN,44457,1750327.07,2518
+Active Everyday Spenders,SOUTH PORTLAN,28890,1728657.56,6322
+Active Everyday Spenders,AUBURN,31343,1519558.99,3193
+Lending-Engaged Loyal Customers,BANGOR,59262,2864354.91,3802
+Lending-Engaged Loyal Customers,PORTLAND,23431,1088364.39,2588
+Lending-Engaged Loyal Customers,AUGUSTA,14310,1013355.55,2970
+Lending-Engaged Loyal Customers,BREWER,17886,973521.23,2079
+Lending-Engaged Loyal Customers,WATERVILLE,13134,710583.25,1535
+Lending-Engaged Loyal Customers,BELFAST,15689,613644.76,978
+Lending-Engaged Loyal Customers,SKOWHEGAN,12355,504619.92,722
+Lending-Engaged Loyal Customers,SCARBOROUGH,7738,501632.74,1451
+Lending-Engaged Loyal Customers,SOUTH PORTLAN,7826,495532.4,1816
+Lending-Engaged Loyal Customers,AUBURN,8882,470296.12,942
+Low-Activity Digital Users,BANGOR,2799,58572.91,876
+Low-Activity Digital Users,PORTLAND,1253,27681.35,589
+Low-Activity Digital Users,AUGUSTA,717,16446.16,356
+Low-Activity Digital Users,BREWER,731,16058.54,317
+Low-Activity Digital Users,BELFAST,758,15470.69,253
+Low-Activity Digital Users,SKOWHEGAN,623,11980.55,183
+Low-Activity Digital Users,WATERVILLE,542,11509.87,235
+Low-Activity Digital Users,AUBURN,494,10917.32,213
+Low-Activity Digital Users,SCARBOROUGH,439,10293.82,225
+Low-Activity Digital Users,LEWISTON,517,8005.55,213
+Low-Frequency Big Spenders,BANGOR,6172,924324.41,1629
+Low-Frequency Big Spenders,PORTLAND,3157,486868.65,1135
+Low-Frequency Big Spenders,AUGUSTA,2646,433157.74,1139
+Low-Frequency Big Spenders,SOUTH PORTLAN,1396,332303.84,691
+Low-Frequency Big Spenders,SCARBOROUGH,1783,293113.76,667
+Low-Frequency Big Spenders,BREWER,1952,271683.17,622
+Low-Frequency Big Spenders,BELFAST,2123,201243.8,425
+Low-Frequency Big Spenders,ELLSWORTH,1161,173207.88,290
+Low-Frequency Big Spenders,WATERVILLE,1549,172285.05,467
+Low-Frequency Big Spenders,LEWISTON,832,166432.4,290

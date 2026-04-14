@@ -1,0 +1,41 @@
+cluster_name,city,txn_count,total_spend,unique_customers
+Active Everyday Spenders,SEATTLE,162595,6415147.63,16734
+Active Everyday Spenders,8558124430,30616,3829210.14,5490
+Active Everyday Spenders,SAN FRANCISCO,61936,2496165.68,9188
+Active Everyday Spenders,BENTONVILLE,30964,2362402.56,6081
+Active Everyday Spenders,CUPERTINO,55747,1496066.15,9921
+Active Everyday Spenders,OAKLAND,12712,1100544.67,1623
+Active Everyday Spenders,4029357733,24282,1089032.99,3761
+Active Everyday Spenders,855-707-7328,10408,1044029.96,4525
+Active Everyday Spenders,BOSTON,21660,991839.33,3763
+Active Everyday Spenders,NEW YORK,19969,983900.47,6175
+Lending-Engaged Loyal Customers,SEATTLE,45575,1822529.38,4914
+Lending-Engaged Loyal Customers,8558124430,8270,1054458.89,1565
+Lending-Engaged Loyal Customers,SAN FRANCISCO,16757,670166.89,2671
+Lending-Engaged Loyal Customers,BENTONVILLE,8635,666756.27,1796
+Lending-Engaged Loyal Customers,CUPERTINO,15725,449837.31,2796
+Lending-Engaged Loyal Customers,OAKLAND,4008,380052.93,532
+Lending-Engaged Loyal Customers,4029357733,7082,319630.48,1078
+Lending-Engaged Loyal Customers,855-707-7328,3187,319341.41,1401
+Lending-Engaged Loyal Customers,CHICAGO,2409,299344.92,1135
+Lending-Engaged Loyal Customers,NEW YORK,5264,298192.92,1853
+Low-Activity Digital Users,SEATTLE,2754,62968.11,972
+Low-Activity Digital Users,CUPERTINO,3023,36033.96,946
+Low-Activity Digital Users,SAN FRANCISCO,1031,22020.7,454
+Low-Activity Digital Users,MOUNTAIN VIEW,1580,15990.19,531
+Low-Activity Digital Users,855-707-7328,301,15840.68,151
+Low-Activity Digital Users,BELLEVUE,415,14935.28,207
+Low-Activity Digital Users,CHICAGO,262,13227.49,148
+Low-Activity Digital Users,8558124430,535,13206.1,238
+Low-Activity Digital Users,NEW YORK,633,12390.02,292
+Low-Activity Digital Users,LOS GATOS,663,11613.05,371
+Low-Frequency Big Spenders,8558124430,3684,961990.32,824
+Low-Frequency Big Spenders,SEATTLE,5483,450423.84,1568
+Low-Frequency Big Spenders,SAN FRANCISCO,1790,292568.26,664
+Low-Frequency Big Spenders,CUPERTINO,2256,249804.36,641
+Low-Frequency Big Spenders,OAKLAND,841,236426.73,183
+Low-Frequency Big Spenders,855-707-7328,1744,200034.97,776
+Low-Frequency Big Spenders,4029357733,1381,177397.75,411
+Low-Frequency Big Spenders,DALLAS,573,167444.22,260
+Low-Frequency Big Spenders,LAKE MARY,695,158510.53,354
+Low-Frequency Big Spenders,BOSTON,760,147895.19,333

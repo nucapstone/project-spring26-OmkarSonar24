@@ -1,0 +1,41 @@
+cluster_name,Merchant_Name,txn_count,total_spend,unique_customers
+Active Everyday Spenders,WM SUPERCENTER #,38476,2631094.93,12794
+Active Everyday Spenders,NST THE HOME DEP,6670,780169.58,3263
+Active Everyday Spenders,HANNAFORD PRISM,5140,718370.24,1513
+Active Everyday Spenders,WALGREENS STORE,19708,639891.18,8196
+Active Everyday Spenders,SHELL SERVICE S,24801,617434.97,6250
+Active Everyday Spenders,HANNAFORD #8241,9303,588135.01,1596
+Active Everyday Spenders,CENTRAL MAINE PO,2848,555028.91,1726
+Active Everyday Spenders,DOLLAR GENERAL #,20710,548267.62,5767
+Active Everyday Spenders,DEAD RIVER COMPA,1210,425711.31,658
+Active Everyday Spenders,CUMBERLAND FARMS,20902,421899.87,4752
+Lending-Engaged Loyal Customers,WM SUPERCENTER #,11376,767965.96,3774
+Lending-Engaged Loyal Customers,NST THE HOME DEP,2151,249482.21,979
+Lending-Engaged Loyal Customers,HANNAFORD PRISM,1650,218994.89,482
+Lending-Engaged Loyal Customers,WALGREENS STORE,6414,204156.35,2458
+Lending-Engaged Loyal Customers,SHELL SERVICE S,7392,188876.01,1870
+Lending-Engaged Loyal Customers,HANNAFORD #8241,3123,184885.08,541
+Lending-Engaged Loyal Customers,CENTRAL MAINE PO,870,166560.02,528
+Lending-Engaged Loyal Customers,DOLLAR GENERAL #,6122,154345.93,1698
+Lending-Engaged Loyal Customers,WAL WAL-MART #18,2111,134467.25,1121
+Lending-Engaged Loyal Customers,HANNAFORD #8173,2220,130450.08,535
+Low-Activity Digital Users,WM SUPERCENTER #,493,13702.83,381
+Low-Activity Digital Users,MARITIME FARMS,192,5581.4,71
+Low-Activity Digital Users,SHELL SERVICE S,283,5528.61,182
+Low-Activity Digital Users,MAINE TURNPIKE A,186,5370.63,97
+Low-Activity Digital Users,DOLLAR GENERAL #,307,4760.61,194
+Low-Activity Digital Users,WALGREENS STORE,248,4041.72,197
+Low-Activity Digital Users,CUMBERLAND FARMS,264,4032.82,168
+Low-Activity Digital Users,FAMILY DOLLAR,203,3025.43,139
+Low-Activity Digital Users,HANNAFORD #8241,123,3011.7,73
+Low-Activity Digital Users,WAL WAL-MART #18,111,2949.5,93
+Low-Frequency Big Spenders,WM SUPERCENTER #,1660,183209.15,1010
+Low-Frequency Big Spenders,DEAD RIVER COMPA,352,169520.03,196
+Low-Frequency Big Spenders,NST THE HOME DEP,771,156157.01,392
+Low-Frequency Big Spenders,CENTRAL MAINE PO,489,96273.51,290
+Low-Frequency Big Spenders,FABIAN OIL,196,88884.78,69
+Low-Frequency Big Spenders,COSTCO WHSE #16,424,86055.99,184
+Low-Frequency Big Spenders,THE HOME DEPOT #,415,67065.25,206
+Low-Frequency Big Spenders,HANNAFORD #8241,658,66500.77,170
+Low-Frequency Big Spenders,HAMMOND LUMBER B,170,61465.94,68
+Low-Frequency Big Spenders,HANNAFORD PRISM,331,51333.7,93

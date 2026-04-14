@@ -1,7 +1,7 @@
 # Clustering Findings -
 
 ## Data
-- 58,840 individual retail customers, 57 features
+- 58,840 individual retail customers, 55 features
 - Features cover: spend amounts, category shares (grocery, dining, gas, etc.), transaction frequency, merchant behavior, demographics
 
 ## Cleaning
@@ -42,10 +42,10 @@ No single clear winner - silhouette alone wasn't sufficient to pick k confidentl
 
 | k | Silhouette | Davies-Bouldin ↓ | Calinski-Harabasz ↑ |
 |---|---|---|---|
-| 2 | 0.150 | 3.41 | 4040 |
-| 3 | 0.063 | 3.23 | 2940 |
-| **4** | **0.066** | **3.09** | **2587** |
-| 5 | 0.076 | 2.61 | 2507 |
+| 2 | 0.174 | 3.41 | 4040 |
+| 3 | 0.179 | 3.23 | 2940 |
+| **4** | **0.062** | **3.09** | **2587** |
+| 5 | 0.112 | 2.61 | 2507 |
 
 Three metrics together gave a more consistent picture. Davies-Bouldin improves through k=4–5 then worsens. **k=4 selected** as the point of diminishing returns across all metrics.
 
@@ -61,9 +61,11 @@ Both tested at k=4:
 
 | Segment | Count | % |
 |---|---|---|
-| Multi-Product Loyal Customers | 30,244 | 51.5% |
-| Infrequent High-Value Buyers | 9,993 | 17.0% |
-| Disengaged Customers | 9,969 | 17.0% |
 | High Engagement Spenders | 8,471 | 14.4% |
+| Multi-Product Loyal Customers | 30,244 | 51.5% |
+| Disengaged Customers | 9,969 | 17.0% |
+| Infrequent High-Value Buyers | 9,993 | 17.0% |
+
 
 ![Customer clusters](/figs/clustering/cluster_profiles.png)
+

@@ -1,0 +1,9 @@
+cluster_name,location,txn_count,total_spend,unique_customers
+Active Everyday Spenders,In-State (Maine),1648221,71709561.35,28301
+Active Everyday Spenders,Out-of-State,1093916,56805342.37,29002
+Lending-Engaged Loyal Customers,In-State (Maine),476996,21472782.91,9221
+Lending-Engaged Loyal Customers,Out-of-State,311415,16958146.82,9328
+Low-Activity Digital Users,In-State (Maine),22352,467249.53,4795
+Low-Activity Digital Users,Out-of-State,28561,598873.22,6119
+Low-Frequency Big Spenders,In-State (Maine),56589,7933085.83,7144
+Low-Frequency Big Spenders,Out-of-State,57730,9747759.32,8152

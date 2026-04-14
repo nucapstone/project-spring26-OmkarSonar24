@@ -1,0 +1,41 @@
+cluster_name,Merchant_Name,txn_count,total_spend,unique_customers
+Active Everyday Spenders,WALMART.COM 8009,29978,2270659.91,5937
+Active Everyday Spenders,Spectrum,7466,801020.26,3913
+Active Everyday Spenders,APPLE.COM/BILL,46806,707548.81,9216
+Active Everyday Spenders,APPLE CASH SENT,5332,524227.18,1337
+Active Everyday Spenders,STATE FARM  INSU,2800,478533.92,1417
+Active Everyday Spenders,U.S. CELLULAR,2144,337901.0,1105
+Active Everyday Spenders,VENMO *ADD FUNDS,3318,327075.9,579
+Active Everyday Spenders,GEICO   AUTO,1893,292727.12,1011
+Active Everyday Spenders,PROGRESSIVE *INS,1303,279144.29,848
+Active Everyday Spenders,DK*DraftKing 617,6575,276620.91,389
+Lending-Engaged Loyal Customers,WALMART.COM 8009,8360,637226.87,1754
+Lending-Engaged Loyal Customers,Spectrum,2297,250736.08,1203
+Lending-Engaged Loyal Customers,APPLE.COM/BILL,13132,209048.21,2605
+Lending-Engaged Loyal Customers,APPLE CASH SENT,1538,171191.93,352
+Lending-Engaged Loyal Customers,STATE FARM  INSU,833,149769.56,415
+Lending-Engaged Loyal Customers,U.S. CELLULAR,704,114376.28,362
+Lending-Engaged Loyal Customers,PROGRESSIVE INS,385,87990.08,222
+Lending-Engaged Loyal Customers,GEICO   AUTO,511,82741.61,271
+Lending-Engaged Loyal Customers,PROGRESSIVE *INS,364,81310.22,244
+Lending-Engaged Loyal Customers,VENMO *ADD FUNDS,935,80188.27,184
+Low-Activity Digital Users,APPLE.COM/BILL,2744,30459.16,853
+Low-Activity Digital Users,Spectrum,169,10110.26,95
+Low-Activity Digital Users,PLAYSTATION NETW,537,9068.71,131
+Low-Activity Digital Users,TMOBILE AUTO PAY,114,7362.97,60
+Low-Activity Digital Users,NETFLIX.COM,382,6834.9,268
+Low-Activity Digital Users,INTUIT *QBooks O,147,6822.7,75
+Low-Activity Digital Users,WALMART.COM 8009,212,6740.97,131
+Low-Activity Digital Users,Spectrum Mobile,132,5730.42,65
+Low-Activity Digital Users,STRAIGHTTALK*SER,119,5314.16,62
+Low-Activity Digital Users,USCELL RECURRING,83,5268.94,41
+Low-Frequency Big Spenders,Spectrum,1290,166331.55,663
+Low-Frequency Big Spenders,APPLE CASH SENT,614,148915.84,160
+Low-Frequency Big Spenders,WESTERN UNION FI,278,135844.62,77
+Low-Frequency Big Spenders,VENMO *ADD FUNDS,551,129576.89,122
+Low-Frequency Big Spenders,RHS BROKERAGE DE,104,118439.46,24
+Low-Frequency Big Spenders,VZWRLSS*APOCC VI,486,97167.76,245
+Low-Frequency Big Spenders,WALMART.COM 8009,907,89515.07,368
+Low-Frequency Big Spenders,MONEYGRAM US,161,83369.31,46
+Low-Frequency Big Spenders,STATE FARM  INSU,421,82004.8,209
+Low-Frequency Big Spenders,TMOBILE AUTO PAY,455,75501.45,225
