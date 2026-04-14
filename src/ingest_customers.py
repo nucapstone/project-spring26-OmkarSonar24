@@ -68,7 +68,7 @@ def ingest(excel_path=CUSTOMERS_EXCEL, csv_path=CUSTOMERS_CSV):
     if not excel_path.exists():
         raise FileNotFoundError(f"Excel file not found: {excel_path}")
 
-    # Read Excel — keep all columns as-is, no type inference
+    # Read Excel - keep all columns as-is, no type inference
     df = pd.read_excel(excel_path, dtype=str)
     raw_count = len(df)
     print(f"  Raw rows:      {raw_count:>10,}")
