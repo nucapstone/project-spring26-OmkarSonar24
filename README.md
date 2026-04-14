@@ -171,7 +171,7 @@ project-spring26-OmkarSonar24/
 
 ### Step 1: Clone and install dependencies
 
-**Using uv (recommended):**
+**Using uv:**
 
 ```bash
 git clone <repo-url>
@@ -261,7 +261,7 @@ The dashboard runs locally and connects to `../data/capstone.duckdb` via Python 
 | Decision | Rationale |
 |---|---|
 | Custom CSV parser | Raw transaction file has embedded commas in ATM addresses. Standard parsers fail. MCC code used as positional anchor. |
-| Pivot from fraud to segmentation | No fraud labels in dataset. Proactively surfaced to stakeholder as analytical integrity. |
+| Pivot from fraud to segmentation | No fraud labels in dataset. |
 | K-Means k=4 | Distinctiveness count shows k=4 is the only value where every cluster has ≥9 features at >0.3 SD from population mean. |
 | Full 55-feature set | Three-way comparison (55 vs 41 vs 33 features) showed full set outperforms pruned versions at all business-relevant k values. |
 | Observable Framework | Reactive dashboard with Python data loaders connecting directly to DuckDB - no intermediate API layer needed. |
@@ -272,7 +272,6 @@ The dashboard runs locally and connects to `../data/capstone.duckdb` via Python 
 
 - **Short observation window** - 65 days (Nov–Jan) includes holiday seasonality and post-holiday pullback. Patterns may not generalize to a full year.
 - **Customer coverage** - analysis covers 58,677 customers with both transaction and demographic records. ~59,000 additional transacting customers lacked demographic data and were excluded.
-- **MCC categorization** - some codes are ambiguous (e.g., Bookstores spans Amazon to physical retailers). Requires ongoing stakeholder validation.
 - **Soft cluster boundaries** - customer behavior exists on a continuum. HDBSCAN confirmed no naturally discrete groups; segments are useful business groupings, not hard categories.
 
 ## Future Work
