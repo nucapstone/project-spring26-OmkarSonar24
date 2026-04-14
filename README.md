@@ -50,6 +50,7 @@ Both datasets share a masked `CustomerID` as the linking identifier. The observa
 | Silver | `silver.*` | `src/load_db.py` | Cleaned, typed, deduplicated |
 | Gold | `gold.*` | `dbt run` + notebook | Feature-engineered, analysis-ready |
 
+![Pipeline Architecture](/figs/architecture.png)
 
 ### Segmentation
  
@@ -67,7 +68,9 @@ Both datasets share a masked `CustomerID` as the linking identifier. The observa
 ### Interactive Dashboard
  
 An Observable Framework dashboard provides segment exploration and business recommendations across four pages: Overview, Trends, Customer Profiles, and Recommendations.
- 
+
+**Live Dashboard:** [https://nucapstone.github.io/project-spring26-OmkarSonar24/](https://nucapstone.github.io/project-spring26-OmkarSonar24/)
+
 ---
 
 ## Project Structure
@@ -135,6 +138,9 @@ project-spring26-OmkarSonar24/
 │       ├── transactions_sample.csv
 │       └── mcc_mapping_labeled.csv
 │
+├── docs/                             # Deployed dashboard (GitHub Pages)
+|
+|
 ├── figs/                             # Visualizations
 │   ├── eda/
 │   └── clustering/
